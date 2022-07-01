@@ -1,0 +1,66 @@
+class Persona{
+    constructor(edad,nombre,telefono){
+        this._edad=edad;
+        this._nombre=nombre;
+        this._telefono=telefono
+    }
+    get edad(){
+        return this._edad;
+    }
+    set edad(edad){
+        return this._edad=edad;
+    }
+    get nombre(){
+        return this._edad;
+    }
+    set nombre(nombre){
+        return this._nombre=nombre;
+    }
+    get telefono(){
+        return this._telefono;
+    }
+    set telefono(telefono){
+        return this._telefono=telefono
+    }
+    nombreCompleto(){
+        return this._edad+' '+this._nombre+' '+this._telefono
+    }
+};
+
+class Cliente extends Persona{
+    constructor(edad, nombre,telefono,credito){
+        super(edad,nombre,telefono);
+        this._credito=credito;
+    }
+    get credito(){
+        return this.credito;
+    }
+    set credito(credito){
+        return this._credito=credito;
+    }
+    nombreCompleto(){
+        return this._edad+' , '+this._nombre+' , '+this._telefono+' , '+this._credito
+    }
+}
+
+let Cliente1=new Cliente('33 años','Juan','292998289','Financiero');
+console.log(Cliente1.nombreCompleto());
+
+class Trabajador extends Persona{
+    constructor(edad,nombre,telefono,salario){
+        super(edad,nombre,telefono,salario);
+        this._salario=salario;
+    }
+    get salario(){
+        return this._salario;
+    }
+    set salario(salario){
+        return this._salario=salario;
+    }
+    nombreCompleto(){
+        return this._edad+' , '+this._nombre+' , '+this._telefono+' , '+this._salario
+    }
+};
+
+let Trabajador1= new Trabajador('40años','Felipe','200293838','1000$');
+console.log(Trabajador1.nombreCompleto());
